@@ -12,7 +12,14 @@ class Solution:
         farthest = root.val
         
         while root:
-            farthest = max(root.val, farthest, key = lambda x : (abs(target -x), x))
+
+            #farthest = max(root.val, farthest, key = lambda x : (abs(target -x), x))
+
+            if abs(target - root.val) > abs(target - farthest):
+                farthest = root.val
+                
+            if abs(target - root.val) == abs(target - farthest):
+                farthest = max(farthest, root.val)
     
             root = root.left if target < root.val else root.right
                 
