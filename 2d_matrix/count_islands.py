@@ -1,4 +1,49 @@
+# https://leetcode.com/problems/number-of-islands/
+
+from typing import List
+
 class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        number_of_islands = 0
+        
+        if not grid:
+            return number_of_islands
+        
+        rows = len(grid)
+        cols = len(grid[0])
+        
+        seen = [[False]*cols for _ in range(rows)]
+               
+        for row in range(rows):
+            for col in range(cols):
+                if grid[row][col] == "1" and not seen[row][col]:
+                    
+                    number_of_islands += 1
+                    
+                    neighbors = [(row, col)]
+                    
+                    while neighbors:
+                        a_row, a_col = neighbors.pop()
+                        
+                        if a_row-1 >= 0 and grid[a_row-1][a_col] == "1":
+                            neighbors.append((a_row-1, a_col))
+                            seen[a_row-1][a_col] = True
+                            
+                        if a_row+1 < rows and grid[a_row+1][a_col] == "1":
+                            neighbors.append((a_row+1, a_col))
+                            seen[a_row+1][a_col] = True
+                            
+                        if col-1 >= 0 and grid[a_row][a_col-1] == "1":
+                            neighbors.append((a_row, a_col-1))
+                            seen[a_row][a_col-1] = True
+                            
+                        if col+1 < cols and grid[a_row][a_col+1] == "1":
+                            neighbors.append((a_row, a_col+1))
+                            seen[a_row][a_col+1] = True
+                        
+                    
+        return number_of_islands
+    
     def numIslands(self, grid) -> int:
         if not grid:
             return 0
@@ -7,9 +52,6 @@ class Solution:
         
         visited = [[False]*len(grid[0])]*len(grid)
 
-        print("The number of rows are ", len(visited))
-        print("The number of cols are ", len(visited[0]))
-        
         for row in range(len(grid)):
             for col in range(len(grid[row])):
                 print("The row is ", row, " and the col is ", col)
