@@ -1,10 +1,10 @@
-from linked_list.LinkedListNode import LinkedListNode
+from linked_list.ListNode import ListNode
 
 class MaxStack:
 
     def __init__(self):
-        self.head = LinkedListNode(-1)
-        self.tail = LinkedListNode(-1)
+        self.head = ListNode(-1)
+        self.tail = ListNode(-1)
 
         self.head.next = self.tail
         self.tail.prev = self.head
@@ -12,7 +12,7 @@ class MaxStack:
         self.lookup = {}
 
     def push(self, val: int) -> None:
-        to_be_pushed = LinkedListNode(val)
+        to_be_pushed = ListNode(val)
 
         if val not in self.lookup:
             self.lookup[val] = [(to_be_pushed, to_be_pushed.value)]
@@ -21,7 +21,7 @@ class MaxStack:
             
         self.add(to_be_pushed)
 
-    def add(self, node: LinkedListNode) -> None:
+    def add(self, node: ListNode) -> None:
         if not node:
             return
         
@@ -43,7 +43,7 @@ class MaxStack:
 
         return to_be_removed.value
     
-    def remove(self, node: LinkedListNode) -> None:
+    def remove(self, node: ListNode) -> None:
         if not node:
             return
         

@@ -1,7 +1,8 @@
-from linked_list.LinkedList import LinkedList
+
+from linked_list.ListNode import ListNode
 
 def remove_even_values(head):
-    dummy = LinkedList(-1)
+    dummy = ListNode(-1)
     dummy.next = head
 
     current = dummy
@@ -21,16 +22,16 @@ def print_linked_list(head):
         print(current)
         current = current.next
 
-one = LinkedList(1)
-two = LinkedList(2)
-three = LinkedList(3)
-four = LinkedList(4)
-five = LinkedList(5)
-six = LinkedList(6)
-seven = LinkedList(7)
-eight = LinkedList(8)
-nine = LinkedList(9)
-ten = LinkedList(10)
+one = ListNode(1)
+two = ListNode(2)
+three = ListNode(3)
+four = ListNode(4)
+five = ListNode(5)
+six = ListNode(6)
+seven = ListNode(7)
+eight = ListNode(8)
+nine = ListNode(9)
+ten = ListNode(10)
 
 one.next = two
 two.next = three
