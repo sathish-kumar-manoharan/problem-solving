@@ -15,7 +15,7 @@ def pair_sum_sorted_array(numbers, target):
     for index, number in enumerate(numbers):
         complement = target - number
         
-        if complement in lookup and lookup[complement] != index
+        if complement in lookup and lookup[complement] != index:
             return [index, lookup[complement]]
             
     return []
