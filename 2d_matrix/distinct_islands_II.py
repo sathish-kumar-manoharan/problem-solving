@@ -32,14 +32,14 @@ class Solution:
             
             # rotating in 8 different angles
             for x,y in path:
-                rotations[0].append([x,y])
-                rotations[1].append([x,-y])
-                rotations[2].append([-x,y])
-                rotations[3].append([-x,-y])   
-                rotations[4].append([y,x])
-                rotations[5].append([y,-x])
-                rotations[6].append([-y,x])
-                rotations[7].append([-y,-x])     
+                rotations[0].append([x,y])       # Original
+                rotations[1].append([x,-y])      # Horizontal flip
+                rotations[2].append([-x,y])      # Vertical flip
+                rotations[3].append([-x,-y])     # Both flips
+                rotations[4].append([y,x])       # 90 degrees rotation
+                rotations[5].append([y,-x])      # 90 degrees rotation + horizontal flip
+                rotations[6].append([-y,x])      # 90 degrees rotation + vertical flip
+                rotations[7].append([-y,-x])     # 90 degrees rotation + both flips
                 
             for rotation in rotations:
                 rotation.sort()
