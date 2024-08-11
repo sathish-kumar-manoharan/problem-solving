@@ -8,7 +8,10 @@ https://leetcode.com/problems/number-of-closed-islands/submissions/
 
 class Solution:
 
-
+    """
+    Time complexity: O(4⋅m⋅n)=O(m⋅n) operations total for all the nodes.
+    Space complexity: O(m⋅n)
+    """   
     def closedIsland(self, grid: List[List[int]]) -> int:
         count = 0
         
@@ -41,7 +44,11 @@ class Solution:
                     count += 1
         
         return count
-    
+
+    """
+    Time complexity: O(4⋅m⋅n)=O(m⋅n) operations total for all the nodes.
+    Space complexity: O(m⋅n)
+    """   
     def closedIsland(self, grid: List[List[int]]) -> int:
         if not grid:
             return 0
