@@ -1,5 +1,8 @@
 from typing import List
 """
+https://leetcode.com/problems/merge-intervals/
+Time: O(n log n)
+Space: O(log N)
 """
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
