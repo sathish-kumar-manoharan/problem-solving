@@ -47,11 +47,11 @@ class Solution {
           
         while (!destList.isEmpty()) {
           // while we visit the edge, we trim it off from graph.        
-          this.dfs(destList.pollFirst());
+          this.dfs(destList.removeFirst());
         }
       }
         
       // add the airport to the head of the itinerary
-      this.result.offerFirst(origin);
+      this.result.addFirst(origin);
     }
   }
