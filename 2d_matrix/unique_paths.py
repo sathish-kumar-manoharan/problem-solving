@@ -7,6 +7,17 @@ Space: O(M*N)
 """
 class Solution:
     # Time: O(M*N)
+    # Space: O(M)
+    def uniquePaths(self, m: int, n: int) -> int:
+        dp = [1] * m
+
+        for _ in range(1, n):
+            for index in range(1, m):
+                dp[index] += dp[index-1]
+
+        return dp[-1]
+    
+    # Time: O(M*N)
     # Space: O(min(M*N))
     def uniquePaths(self, m: int, n: int) -> int:
         if m > n:
