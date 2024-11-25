@@ -38,8 +38,6 @@ class Solution:
         for i in range(N - 2, -1, -1):
 
             # Same as recursive solution.
-            maxRobbedAmount[i] = max(
-                maxRobbedAmount[i + 1], maxRobbedAmount[i + 2] + nums[i]
-            )
+            maxRobbedAmount[i] = max(maxRobbedAmount[i + 1], maxRobbedAmount[i + 2] + nums[i])
 
         return maxRobbedAmount[0]
