@@ -2,6 +2,7 @@
 https://leetcode.com/problems/clone-graph
 """
 
+from collections import deque
 from typing import Optional
 
 # Definition for a Node.
@@ -13,6 +14,27 @@ class Node:
 class Solution:
     def __init__(self):
         self.visited = {}
+
+    def cloneGraph(self, node: Optional["Node"]) -> Optional["Node"]:
+
+        if not node:
+            return node
+
+        visited = {}
+        queue = deque([node])
+        visited[node] = Node(node.val, [])
+
+        while queue:
+            current = queue.popleft()
+
+            for neighbor in current.neighbors:
+                if neighbor not in visited:
+                    visited[neighbor] = Node(neighbor.val, [])
+                    queue.append(neighbor)
+                visited[current].neighbors.append(visited[neighbor])
+
+        return visited[node]
+
 
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
         if not node:
