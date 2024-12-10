@@ -18,4 +18,25 @@ def wordBreak(s: str, wordDict: List[str]) -> bool:
     print(dp)
     return dp[-1]
 
+    # T: O(N^3 + M*K), where N is the length of s , M is the length of dictionary and K is the Length of words in dictionary
+    # S: O(N + M*K) 
+    def wordBreak1(self, s: str, wordDict: List[str]) -> bool:
+        words = set(wordDict)
+        seen = set()
+        
+        queue = deque([0])
+        
+        while queue:
+            start = queue.popleft()
+            
+            if start == len(s):
+                return True
+            
+            for index in range(start + 1, len(s) + 1):
+                if index not in seen and s[start : index] in words:
+                    queue.append(index)
+                    seen.add(index)
+                
+        return False
+
 wordBreak("leetcode", ["leet", "code"])
