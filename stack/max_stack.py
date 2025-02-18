@@ -18,7 +18,7 @@ class MaxStack:
     def top(self) -> int:
         return self.stack[-1][0]
 
-    def getMin(self) -> int:
+    def getMax(self) -> int:
         return self.stack[-1][1]
 
 
