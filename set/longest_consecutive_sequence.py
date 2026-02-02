@@ -2,11 +2,12 @@ from typing import List
 
 """
 https://leetcode.com/problems/longest-consecutive-sequence/
+This question is purely for numbers
 
 """
 
 class Solution:
-    # Time: O(N^3)
+    # Time: O(N^2)
     # Space: O(1)
     def longestConsecutive(self, nums: List[int]) -> int:
         longest_streak = 0
@@ -24,7 +25,7 @@ class Solution:
         return longest_streak
     
     # Time: O(N log N)
-    # Space: O(N)
+    # Space: O(N), O(1) for python due to timsor
     def longestConsecutive(self, nums: List[int]) -> int:
         if not nums:
             return 0
