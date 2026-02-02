@@ -27,10 +27,8 @@ class Solution:
         
         level = 0
         
-        while queue:
-            size = len(queue)
-            
-            for _ in range(size):
+        while queue:           
+            for _ in range(len(queue)):
             
                 node = queue.popleft()
 
